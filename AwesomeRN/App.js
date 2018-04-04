@@ -8,7 +8,18 @@ import { StyleSheet, Text, View } from 'react-native';
 export default class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { username: NativeModules.RNManager.getUsername() };
+
+        this.state = {
+            username: ''
+        };
+
+        NativeModules.RNManager.getUsername((error, events) => {
+            if (events) {
+                this.setState({
+                    username: events.username
+                });
+            }
+          })
     }
 
   render() {

@@ -8,3 +8,5 @@
 /build
 /captures
 .externalNativeBuild
+index.android.bundle
+index.android.bundle.meta
